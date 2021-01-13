@@ -1,5 +1,4 @@
 import '../Table.css'
-
 export default function Table({ countries }) {
   return (
     <div className='table'>
@@ -11,6 +10,7 @@ export default function Table({ countries }) {
           </strong>
         </tr>
       ))}
+      
     </div>
   )
 }

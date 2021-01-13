@@ -80,7 +80,7 @@ export default function LineGraph() {
 
   return (
     <div>
-      <h1>I am a</h1>
+      <h1>::::::</h1>
       {data?.length > 0 && (
         <Line
           data={{

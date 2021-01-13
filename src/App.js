@@ -1,9 +1,7 @@
-
 import InfoBox from './components/InfoBox.js'
 import Map from './components/Map'
 import LineGraph from './components/LineGraph'
 import Table from './components/Table'
-
 
 import './App.css'
 
@@ -11,11 +9,14 @@ import { SortData } from './util.js'
 import { MenuItem, FormControl, Select } from '@material-ui/core'
 import { useState, useEffect } from 'react'
 import { Card, CardContent } from '@material-ui/core'
+import { News } from './components/News.js'
+import Appbar from './components/Appbar.js'
 
 function App() {
   const [countries, SetCountries] = useState([])
   const [tableData, SetTableData] = useState([])
   const [country, SetCountry] = useState('worldwide')
+  // const [country, SetCountry] = useState('worldwide')
   const [countryInfo, SetCountryInfo] = useState({})
 
   const onCountryChange = async (e) => {
@@ -50,6 +51,7 @@ function App() {
             name: country.country,
             value: country.countryInfo.iso2,
           }))
+
           const sortedData = SortData(data)
           SetCountries(countries)
           SetTableData(sortedData)
@@ -60,8 +62,12 @@ function App() {
   return (
     <div className='app'>
       <div className='app__left'>
+        <div>
+          <Appbar />
+        </div>
         <div className='app__header'>
-          <h1>Corona app</h1>
+          <h1>Corona App</h1>
+
           <FormControl className='app__dropdown'>
             <Select
               variant='outlined'
@@ -75,7 +81,6 @@ function App() {
             </Select>
           </FormControl>
         </div>
-
         <div className='app__stat'>
           <InfoBox
             title='Corona Virus Cases'
@@ -95,7 +100,8 @@ function App() {
             cases={countryInfo.todayDeaths}
           />
         </div>
-        <Map />
+        {/* <Map /> */}
+        <News />
       </div>
       <Card className='app__right'>
         <CardContent>
