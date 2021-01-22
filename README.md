@@ -1,8 +1,8 @@
-<h3>Corona (Covid-19) Tracking application</h3>
+# Corona (Covid-19) Tracking application
 ## Corona App
-## This project was bootstrapped with [Create React App].
+### This project was bootstrapped with [Create React App].
 
-Description
+### Description
 This is a simple starter project for React with its dependacies.
 
 Features:
